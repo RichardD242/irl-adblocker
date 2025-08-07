@@ -6,14 +6,33 @@
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <title>Ad Blocker</title>
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/RichardD242/irl-adblocker/refs/heads/master/X.png">
+    <link rel="apple-touch-icon" href="https://raw.githubusercontent.com/RichardD242/irl-adblocker/refs/heads/master/X.png">
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
     <div class="container">
         <div class="camera-container">
             <video id="cameraFeed" autoplay playsinline></video>
+            <canvas id="adBlockCanvas" class="ad-block-overlay"></canvas>
+            <div class="controls">
+                <select id="cameraSelect" class="camera-select">
+                    <option value="user">Front Camera</option>
+                    <option value="environment" selected>Back Camera</option>
+                </select>
+                <button id="startButton" class="start-btn">Start Blocking Ads</button>
+            </div>
             <div id="status" class="status">Ready to start blocking ads</div>
-            <button id="startButton" class="start-btn">Start Blocking Ads</button>
+            <div class="settings">
+                <div class="setting-row">
+                    <label for="brightness">Brightness</label>
+                    <input type="range" id="brightness" min="0" max="200" value="100">
+                </div>
+                <div class="setting-row">
+                    <label for="contrast">Contrast</label>
+                    <input type="range" id="contrast" min="0" max="200" value="100">
+                </div>
+            </div>
         </div>
     </div>
     <script src="main.js"></script>
